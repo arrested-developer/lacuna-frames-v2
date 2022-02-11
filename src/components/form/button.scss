@@ -1,0 +1,47 @@
+@import "../../styles/colours";
+@import "../../styles/breakpoints";
+
+.lacuna-button {
+  font-family: Form, "Times New Roman", serif;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  outline: none;
+  background: transparent;
+  color: $text-colour-yellow;
+  border: 3px solid $border-colour-yellow;
+  margin-top: 8px;
+  &:hover,
+  &:focus {
+    background: $border-colour-yellow;
+    color: $white;
+  }
+}
+
+.theme--red {
+  .lacuna-button {
+    color: $text-colour-red;
+    border: 3px solid $border-colour-red;
+    &:hover,
+    &:focus {
+      background: $border-colour-red;
+      color: $white;
+    }
+  }
+}
+
+.lacuna-button--disabled {
+  color: $grey !important;
+  border-color: $grey !important;
+  &:hover,
+  &:focus {
+    background: transparent !important;
+    color: $grey !important;
+  }
+}
+
+@media all and (min-width: $width-medium) and (min-height: $height-medium) {
+  .lacuna-button {
+    font-size: 28px !important;
+    margin-top: 24px !important;
+  }
+}

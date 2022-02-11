@@ -1,0 +1,17 @@
+@import "../styles/colours";
+
+.theme-provider__toggle-button {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: $red;
+  border: none;
+  position: fixed;
+  top: 4px;
+  left: 4px;
+  z-index: 10000;
+}
+
+.theme--red.theme-provider__toggle-button {
+  background: $ochre;
+}

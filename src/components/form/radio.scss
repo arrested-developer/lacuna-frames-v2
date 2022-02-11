@@ -1,0 +1,58 @@
+@import "../../styles/colours";
+
+.lacuna-radio {
+  position: relative;
+  font-family: Form, "Times New Roman", serif;
+  color: $text-colour-yellow;
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  .checkmark {
+    display: inline-block;
+    background: transparent;
+    border: 1px solid $text-colour-yellow;
+    border-radius: 50%;
+    width: 15px !important;
+    height: 15px !important;
+    margin-right: 4px;
+  }
+  &--selected {
+    color: $text-colour-red;
+    .checkmark {
+      border: none;
+      background: $text-colour-red;
+    }
+  }
+  &--disabled {
+    color: $grey;
+    .checkmark {
+      border: 1px solid $grey;
+    }
+  }
+}
+
+.theme--red {
+  .lacuna-radio {
+    color: $text-colour-red;
+    .checkmark {
+      border: 1px solid $text-colour-red;
+    }
+    &--selected {
+      color: $text-colour-yellow;
+      .checkmark {
+        border: none;
+        background: $text-colour-yellow;
+      }
+    }
+    &--disabled {
+      color: $grey;
+      .checkmark {
+        border: 1px solid $grey;
+      }
+    }
+  }
+}

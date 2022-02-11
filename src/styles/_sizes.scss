@@ -1,0 +1,10 @@
+$frame-size-sm: 95vmin;
+// $frame-size-med: 85vmin;
+$max-frame-size-sm: calc(100vh - 166px);
+$max-frame-inner-size-sm: calc(100vh - 170px);
+
+$max-frame-size-not-small: calc(100vh - 286px);
+$max-frame-inner-size-not-small: calc(100vh - 290px);
+
+$max-frame-size-medium: calc(100vh - 512px);
+$max-frame-inner-size-medium: calc(100vh - 556px);

@@ -1,0 +1,117 @@
+@import "../../styles/fonts";
+@import "../../styles/breakpoints";
+@import "../../styles/sizes";
+@import "../../styles/colours";
+
+.lacuna-info-icon {
+  margin-left: 0.33rem;
+  font-family: $roboto;
+  text-transform: none;
+  font-size: 1rem;
+  img {
+    width: 0.8em;
+    height: 0.8em;
+    position: relative;
+    top: 1px;
+  }
+
+  .children {
+    color: $blue;
+    margin-left: 0.33rem;
+  }
+
+  &--with-text {
+    display: block;
+    margin-left: 0rem;
+    margin-top: 0.33rem;
+    margin-bottom: 0.5rem;
+    border-radius: 10px;
+  }
+}
+
+.lacuna-modal {
+  position: fixed;
+  width: 200px;
+  height: 200px;
+  top: calc(50vh - 100px);
+  left: calc(50vw - 100px);
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 5px solid white;
+  & > img {
+    width: 100%;
+    height: auto;
+  }
+
+  .info-inner {
+    width: 100%;
+    padding: 24px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .paragraph-selector__content {
+    padding: 0 !important;
+  }
+}
+
+@media (min-width: 500px) and (min-height: 600px) {
+  .lacuna-modal {
+    width: 300px;
+    height: 300px;
+    top: calc(50vh - 150px);
+    left: calc(50vw - 150px);
+  }
+}
+
+@media (min-width: 700px) and (min-height: 900px) {
+  .lacuna-modal {
+    width: 500px;
+    height: 500px;
+    top: calc(50vh - 250px);
+    left: calc(50vw - 250px);
+    .info-inner {
+      width: 60%;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+@media (min-width: 800px) and (min-height: 1000px) {
+  .lacuna-modal {
+    width: 350px;
+    height: 350px;
+    top: calc(50vh - 175px);
+    left: calc(50vw - 175px);
+    .info-inner {
+      width: 90%;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+@media (min-width: 800px) and (min-height: 1200px) {
+  .lacuna-modal {
+    width: 500px;
+    height: 500px;
+    top: calc(50vh - 250px);
+    left: calc(50vw - 250px);
+    .info-inner {
+      width: 60%;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}

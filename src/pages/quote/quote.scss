@@ -1,0 +1,127 @@
+@import "../../styles/fonts";
+@import "../../styles/colours";
+@import "../../styles/breakpoints";
+
+input[type="text"] {
+  background: white;
+  border: 1px solid white;
+  outline: none;
+  font-size: 0.9rem;
+  font-family: sans-serif;
+  padding: 4px;
+  -webkit-appearance: none;
+  border-radius: 0;
+  &:focus {
+    outline: none;
+    border: 1px solid $border-colour-yellow;
+    box-shadow: 0 0 5px $border-colour-yellow;
+  }
+}
+
+.paragraph-selector__content {
+  width: 100%;
+}
+.quote-form {
+  font-family: $form;
+  text-transform: uppercase;
+  color: $text-colour-yellow;
+  width: 100%;
+
+  &__personal-details {
+    font-family: $form;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: $text-colour-yellow;
+    width: 100vw;
+    height: calc(100vh - 256px);
+    background: rgba(255, 255, 255, 0.85);
+    padding: 32px 8px;
+    position: fixed;
+    top: 128px;
+    text-align: center;
+    .personal-details__inner {
+      input[type="text"] {
+        width: 256px;
+        margin-top: 4px !important;
+      }
+      button {
+        margin-top: 12px;
+      }
+      &--thanks {
+        & > p {
+          max-width: 32em;
+          margin-bottom: 16px;
+        }
+      }
+    }
+  }
+
+  .validation {
+    font-family: $roboto;
+    font-size: 0.7rem;
+    text-transform: none;
+    display: block;
+    margin: 10px 0 18px 0 !important;
+    & > span {
+      background: transparentize($text-colour-red, 0.25);
+      border-radius: 2px;
+      padding: 4px 10px;
+      color: $white;
+    }
+  }
+
+  label {
+    width: 100%;
+    margin-bottom: 4px;
+    input[type="text"],
+    input[type="number"] {
+      display: block;
+      margin: 0 auto 8px auto;
+      width: 100%;
+      max-width: 200px;
+    }
+    textarea {
+      display: block;
+      width: 100%;
+      padding: 0.25rem;
+      height: 20vh;
+    }
+    input[name="optIn"] {
+      display: block;
+      margin: 0 auto 8px auto;
+    }
+  }
+  button,
+  input[type="submit"] {
+    z-index: 9999999999;
+  }
+}
+
+.theme--red {
+  .quote-form {
+    color: $text-colour-red;
+    &__personal-details {
+      color: $text-colour-red;
+    }
+  }
+  input[type="text"] {
+    &:focus {
+      border: 1px solid $border-colour-red;
+      box-shadow: 0 0 5px $border-colour-red;
+    }
+  }
+}
+
+.theme--red.quote-form__personal-details {
+  color: $text-colour-red;
+}
+
+@media all and (min-width: $width-medium) and (min-height: $height-medium) {
+  .quote-form,
+  .quote-form__personal-details {
+    font-size: 24px !important;
+  }
+}

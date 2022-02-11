@@ -1,0 +1,51 @@
+@import "reset";
+@import "font-imports";
+@import "fonts";
+@import "colours";
+
+// global styles
+
+body {
+  background-color: $background-colour;
+}
+
+.screen-reader {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+
+.button-link {
+  border: none;
+  outline: none;
+  background: transparent;
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+@media all and (min-width: 400px) {
+  .site-title {
+    top: 16px;
+  }
+
+  .page-title {
+    bottom: 16px;
+  }
+}
+
+@media all and (min-width: 500px) and (min-height: 500px) {
+  .site-title,
+  .page-title {
+    font-size: 96px;
+  }
+}
