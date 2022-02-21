@@ -5,7 +5,7 @@
 
 // colours
 .nav-frame {
-  border: 45px solid $border-colour-yellow;
+  border-color: $border-colour-yellow;
 }
 
 .section {
@@ -29,7 +29,7 @@ a:active {
 
 .theme--red {
   .nav-frame {
-    border: 45px solid $border-colour-red;
+    border-color: $border-colour-red;
   }
 
   .section {
@@ -49,7 +49,15 @@ a:active {
     color: $link-colour-red;
   }
 }
+
 // other styles
+
+// - base variables
+$base-size-portrait: 4vmin;
+$base-size-landscape: 2.25vh;
+// $base-size-s: 16px;
+// $base-size-m: 18px;
+// $base-size-l: 24px;
 
 .scroll-height-container {
   height: 520vh;
@@ -65,19 +73,19 @@ a:active {
 }
 
 .nav-frame {
-  width: $frame-size-sm;
-  height: $frame-size-sm;
-  max-height: $max-frame-size-sm;
-  max-width: $max-frame-size-sm;
+  width: $base-size-landscape * 22;
+  height: $base-size-landscape * 22;
   pointer-events: none;
   position: fixed;
   display: flex;
+  border-style: solid;
+  border-width: $base-size-landscape * 3;
   z-index: 999999999;
   .nav-frame__link {
     width: 100%;
     height: 100%;
-    padding-top: 11px;
-    padding-left: 16px;
+    padding-top: $base-size-landscape * 0.55;
+    padding-left: $base-size-landscape;
     position: absolute;
     &:nth-child(2) {
       transform: rotate(90deg);
@@ -91,13 +99,13 @@ a:active {
     & > a,
     & > span {
       font-family: $form;
-      font-size: 32px;
+      font-size: $base-size-landscape * 2;
       color: $border-link-colour !important;
       text-decoration: none;
       text-transform: uppercase;
       position: relative;
-      top: -50px;
-      left: -50px;
+      top: -($base-size-landscape * 3.1);
+      left: -($base-size-landscape * 3.1);
     }
   }
 }
@@ -118,15 +126,13 @@ a:active {
   background-color: $frame-inner-background-colour;
   pointer-events: auto;
   position: absolute;
-  width: calc($frame-size-sm - 4px);
-  height: calc($frame-size-sm - 4px);
-  max-width: $max-frame-inner-size-sm;
-  max-height: $max-frame-inner-size-sm;
-  margin: 2px;
-  padding: 50px;
+  width: calc(($base-size-landscape * 22) - 4px);
+  height: calc(($base-size-landscape * 22) - 4px);
+  margin: $base-size-landscape / 8;
+  padding: $base-size-landscape * 3;
   font-family: $form;
   line-height: 1.2em;
-  font-size: 16px;
+  font-size: $base-size-landscape;
   text-align: center;
   text-transform: uppercase;
   &--two {
@@ -163,7 +169,7 @@ a:active {
     position: absolute;
     height: 100%;
     width: 100%;
-    padding: 24px;
+    padding: $base-size-landscape * 1.5;
     transition: opacity 300ms, transform 300ms;
     display: flex;
     flex-direction: row;
@@ -184,11 +190,11 @@ a:active {
   }
   &__controls {
     position: absolute;
-    height: 32px;
+    height: $base-size-landscape * 2;
     width: 100%;
     left: 0;
-    top: calc(50% - 16px);
-    padding: 0 6px;
+    top: calc(50% - $base-size-landscape);
+    padding: 0 ($base-size-landscape / 3);
     button {
       border: none;
       background: none;
@@ -199,11 +205,13 @@ a:active {
   }
   &__prev {
     float: left;
-    margin-left: -10px;
+    margin-left: -($base-size-landscape / 3);
+    padding-left: $base-size-landscape / 2;
   }
   &__next {
     float: right;
-    margin-right: -10px;
+    margin-right: -($base-size-landscape / 3);
+    padding-right: $base-size-landscape / 2;
   }
 }
 
@@ -222,54 +230,45 @@ a:active {
   margin: 0 auto;
 }
 
-@media all and (min-width: 400px) and (min-height: 400px) {
-  .section {
-    font-size: 18px;
-  }
-}
-
-@media all and (min-width: 540px) and (min-height: 540px) {
-  .section {
-    font-size: 20px;
-  }
-}
-
-@media all and (min-width: $width-not-small) and (min-height: $height-not-small) {
+@media all and (max-aspect-ratio: 10/17) {
   .nav-frame {
-    max-height: $max-frame-size-not-small;
-    max-width: $max-frame-size-not-small;
+    width: $base-size-portrait * 22;
+    height: $base-size-portrait * 22;
+    border-width: $base-size-portrait * 3;
+    .nav-frame__link {
+      padding-top: $base-size-portrait * 0.55;
+      padding-left: $base-size-portrait;
+      & > a,
+      & > span {
+        font-size: $base-size-portrait * 2;
+        top: -($base-size-portrait * 3.1);
+        left: -($base-size-portrait * 3.1);
+      }
+    }
   }
-  .section {
-    max-width: $max-frame-inner-size-not-small;
-    max-height: $max-frame-inner-size-not-small;
-    line-height: 1.2em !important;
-    font-size: 24px !important;
-  }
-  .paragraph-selector__content {
-    padding: 1rem;
-  }
-}
 
-@media all and (min-width: $width-medium) and (min-height: $height-medium) {
-  .nav-frame {
-    max-height: $max-frame-size-medium;
-    max-width: $max-frame-size-medium;
-    border-width: 65px !important;
-  }
   .section {
-    max-width: $max-frame-inner-size-medium;
-    max-height: $max-frame-inner-size-medium;
+    width: calc(($base-size-portrait * 22) - 4px);
+    height: calc(($base-size-portrait * 22) - 4px);
+    margin: $base-size-portrait / 8;
+    padding: $base-size-portrait * 3;
+    font-size: $base-size-portrait;
   }
-  .paragraph-selector__content {
-    padding: 4rem !important;
-  }
-  .nav-frame__link {
-    padding-top: 0;
-    & > a,
-    & > span {
-      font-size: 48px !important;
-      top: -68px !important;
-      left: -68px !important;
+
+  .paragraph-selector {
+    &__content {
+      padding: $base-size-portrait * 1.5;
+    }
+    &__controls {
+      height: $base-size-portrait * 2;
+      top: calc(50% - $base-size-portrait);
+      padding: 0 ($base-size-portrait / 3);
+    }
+    &__prev {
+      margin-left: -($base-size-portrait / 2);
+    }
+    &__next {
+      margin-right: -($base-size-portrait / 2);
     }
   }
 }

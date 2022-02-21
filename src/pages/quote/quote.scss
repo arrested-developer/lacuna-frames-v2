@@ -6,9 +6,9 @@ input[type="text"] {
   background: white;
   border: 1px solid white;
   outline: none;
-  font-size: 0.9rem;
+  font-size: 0.9em;
   font-family: sans-serif;
-  padding: 4px;
+  padding: 0.25em;
   -webkit-appearance: none;
   border-radius: 0;
   &:focus {
@@ -75,23 +75,23 @@ input[type="text"] {
 
   label {
     width: 100%;
-    margin-bottom: 4px;
+    margin-bottom: 0.25em;
     input[type="text"],
     input[type="number"] {
       display: block;
-      margin: 0 auto 8px auto;
+      margin: 0 auto 0.5em auto;
       width: 100%;
       max-width: 200px;
     }
     textarea {
       display: block;
       width: 100%;
-      padding: 0.25rem;
+      padding: 0.25em;
       height: 20vh;
     }
     input[name="optIn"] {
       display: block;
-      margin: 0 auto 8px auto;
+      margin: 0 auto 0.5em auto;
     }
   }
   button,
