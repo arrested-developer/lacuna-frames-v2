@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "netlify dev",
     "serve": "webpack serve --config webpack.config.js --env env=development --env NODE_ENV=development",
-    "build": "rm -rf dist && NODE_ENV=production webpack --config webpack.config.js --env env=production",
+    "build": "rm -rf dist && NODE_ENV=production webpack --config webpack.config.js --env env=production && mv _redirects ./dist",
     "prepare": "husky install",
     "test": "jest",
     "lint": "eslint . --cache --ext .js,.jsx,.ts,.tsx"
