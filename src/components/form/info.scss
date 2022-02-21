@@ -45,8 +45,10 @@ $base-size-landscape: 2.25vmin;
   overflow: hidden;
   border: 5px solid white;
   & > img {
-    width: 100%;
-    height: auto;
+    display: block;
+    height: 100%;
+    width: auto;
+    margin: 0 auto;
   }
 
   .info-inner {
