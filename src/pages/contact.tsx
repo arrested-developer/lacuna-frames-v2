@@ -13,7 +13,35 @@ const Contact = () => {
       <InfoModal isOpen={isMapOpen} close={() => setIsMapOpen(false)}>
         <img src={lacunaMap} alt="map to Lacuna Frames" />
       </InfoModal>
-      <RotatingPage>
+      <RotatingPage
+        isScrollDisabled={isMapOpen}
+        overrideRotation={isMapOpen ? 0 : undefined}
+      >
+        <Section title="Visit">
+          <p key="visit-zero">
+            Studio 39,
+            <br />
+            Govan Workspace,
+            <br />
+            100 Elderpark st,
+            <br />
+            Glasgow,
+            <br />
+            G51 3TR
+          </p>
+          <p key="visit-one">
+            In studio consultations are always the best way for us to design
+            your frames
+          </p>
+          <p key="visit-two">
+            Let us know when you would like to book a visit
+            <br />
+            <br />
+            <button className="button-link" onClick={() => setIsMapOpen(true)}>
+              Map
+            </button>
+          </p>
+        </Section>
         <Section title="Collections">
           <p key="collect-one">
             We’ll let you know once your frames are in production and provide
@@ -42,20 +70,6 @@ const Contact = () => {
             <br />
             <br />
             <a href="tel:+447530386628">07530 386628</a>
-          </p>
-        </Section>
-        <Section title="Visit">
-          <p key="visit-one">
-            In studio consultations are always the best way for us to design
-            your frames
-          </p>
-          <p key="visit-two">
-            Let us know when you would like to book a visit
-            <br />
-            <br />
-            <button className="button-link" onClick={() => setIsMapOpen(true)}>
-              Map
-            </button>
           </p>
         </Section>
       </RotatingPage>

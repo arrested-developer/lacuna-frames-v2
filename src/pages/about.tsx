@@ -47,16 +47,16 @@ const About = () => {
           </Section>
           <Section title="what">
             <p key="what-one">
-              We serve anyone! We specialise in crafting bespoke picture frames
-              for original artworks to a conservation standard
+              We specialise in crafting bespoke picture frames for original
+              artworks to a conservation standard
             </p>
             <p key="what-two">
               We serve anyone, including buyers, collectors, artists and
               galleries
             </p>
             <p key="what-three">
-              We don&apos;t just frame prints, we love framing objects, canvases
-              and textiles too
+              We don&apos;t just frame prints, we love working with objects,
+              canvases and textiles too
             </p>
           </Section>
         </RotatingPage>
